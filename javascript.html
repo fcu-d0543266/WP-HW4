@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="big5">
+</head>
+<body>
+
+<h2>請選擇學院</h2>
+
+<select id="demo1"onchange="myselect()"></select>
+	
+<h2>請選擇科系</h2>
+<select id="demo2"></select>
+
+
+<script>
+	var i;
+	var college=["","商學院","工學院","資電學院","建設學院","金融學院"];
+	var dept1=["會計學系","國際經營與貿易學系","財稅學系","合作經濟暨社會事業經營學系","統計學系","經濟學系","企業管理學系","行銷學系"];
+	var dept2=["纖維與複合材料學系","工業工程與系統管理學系","化學工程學系","航太與系統工程學系"];
+	var dept3=["資訊工程學系","電機工程學系","電子工程學系","自動控制工程學系","通訊工程學系"];
+	var dept4=["土木工程學系","水利工程與資源保育學系","都市計畫與空間資訊學系","運輸與物流學系","土地管理學系"];
+	var dept5=["風險管理與保險學系","財務金融學系"];
+
+	var options="";
+
+	for(i=0;i<college.length;i++){
+		options=options+ '<option value="'+i+'">'+college[i]+'</option>';
+	}
+
+	
+	document.getElementById("demo1").innerHTML = options;
+	
+	
+	
+	function myselect(){
+		var x=document.getElementById("demo1").value;
+		
+		switch(x){
+			case "1": mydept(dept1);break;
+			case "2": mydept(dept2);break;
+			case "3": mydept(dept3);break;
+			case "4": mydept(dept4);break;
+			case "5": mydept(dept5);break;
+		}
+	}
+
+	function mydept(dept){
+		var option1="";
+		for(var j=0;j<dept.length;j++){
+			option1=option1+'<option value="'+i+'">'+dept[j]+'</option>';
+		}
+
+		document.getElementById("demo2").innerHTML = option1;
+	}
+	
+</script>
+
+
+</body>
+</html> 
